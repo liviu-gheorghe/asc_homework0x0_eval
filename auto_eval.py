@@ -1,11 +1,8 @@
 import subprocess
 
 
-
-
-tasks = [{'id':i, 'exec_file': 'cerinta{}'.format(i), 'tests_file': 'cerinta{}_teste.txt'.format(i)} for i in range(1,5)]
-#print(tasks)
-
+tl_ids = list(map(int, input("Introdu numarul probelemor pe care doresti sa le testezi (ex 1 2 3 4 daca vrei sa le testezi pe toate):").split()))
+tasks = [{'id':i, 'exec_file': 'cerinta{}'.format(i), 'tests_file': 'cerinta{}_teste.txt'.format(i)} for i in tl_ids]
 
 
 for task in tasks:
@@ -22,5 +19,5 @@ for task in tasks:
             print("Success")
         else:
 
-            print("Test failed for task {}, (input was {})".format(task['id'], line['input']))
+            print("Test failed for problem no. {}, (input was {})".format(task['id'], line['input']))
             print("Expected output is {}, actual output is {}".format(expected_output, process_output))
