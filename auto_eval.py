@@ -1,7 +1,7 @@
 import subprocess
 
 
-tl_ids = list(map(int, input("Introdu numarul probelemor pe care doresti sa le testezi (ex 1 2 3 4 daca vrei sa le testezi pe toate):").split()))
+tl_ids = list(map(int, input("Introdu numarul problemelor pe care doresti sa le testezi (ex 1 2 3 4 daca vrei sa le testezi pe toate):").split()))
 tasks = [{'id':i, 'exec_file': 'cerinta{}'.format(i), 'tests_file': 'cerinta{}_teste.txt'.format(i)} for i in tl_ids]
 
 
