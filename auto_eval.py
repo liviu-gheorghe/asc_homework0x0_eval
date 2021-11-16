@@ -21,7 +21,7 @@ start_time = time()
 task_stats = {}
 
 for task in tasks:
-    compile_source = os.path.isfile("cerinta{}".format(task["id"])) and '--no-compile' not in sys_args
+    compile_source = '--no-compile' not in sys_args
     if compile_source:
         compileSource(task)   
     
